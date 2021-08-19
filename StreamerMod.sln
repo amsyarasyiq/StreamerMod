@@ -4,12 +4,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamerMod", "StreamerMod\
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		REACTOR|Any CPU = REACTOR|Any CPU
+		NOREACTOR|Any CPU = NOREACTOR|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{11FBC798-BAF5-4EE5-9511-BE6DB0592F99}.Debug|Any CPU.ActiveCfg = REACTOR|Any CPU
-		{11FBC798-BAF5-4EE5-9511-BE6DB0592F99}.Debug|Any CPU.Build.0 = REACTOR|Any CPU
-		{11FBC798-BAF5-4EE5-9511-BE6DB0592F99}.Debug|Any CPU.Deploy.0 = REACTOR|Any CPU
+		{11FBC798-BAF5-4EE5-9511-BE6DB0592F99}.REACTOR|Any CPU.ActiveCfg = REACTOR|Any CPU
+		{11FBC798-BAF5-4EE5-9511-BE6DB0592F99}.REACTOR|Any CPU.Build.0 = REACTOR|Any CPU
+		{11FBC798-BAF5-4EE5-9511-BE6DB0592F99}.NOREACTOR|Any CPU.ActiveCfg = NOREACTOR|Any CPU
+        {11FBC798-BAF5-4EE5-9511-BE6DB0592F99}.NOREACTOR|Any CPU.Build.0 = NOREACTOR|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -24,9 +24,9 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: StreamerMod.dll
-          path: StreamerMod/bin/Reactor/netstandard2.1/StreamerMod.dll
+          path: StreamerMod/bin/REACTOR/netstandard2.1/StreamerMod.dll
 
       - uses: actions/upload-artifact@v2
-          with:
-            name: StreamerMod.dll (without Reactor)
-            path: StreamerMod/bin/NOREACTOR/netstandard2.1/StreamerMod.dll
+        with:
+          name: StreamerMod.dll (Reactor)
+          path: StreamerMod/bin/NOREACTOR/netstandard2.1/StreamerMod.dll

@@ -23,17 +23,21 @@ Task("Build")
 
     if (tag != null) 
     {
-        settings.MSBuildSettings.Properties["Version"] = settingsWithReactor.MSBuildSettings.Properties["Version"] = new[] { tag };
+        settings.MSBuildSettings.Properties["Version"] = new[] { tag };
+        settingsWithReactor.MSBuildSettings.Properties["Version"] = new[] { tag };
     }
     else if (buildId != null)
     {
-        settings.VersionSuffix = settingsWithReactor.VersionSuffix = "ci." + buildId; "ci." + buildId;
+        settings.VersionSuffix = "ci." + buildId;
+        settingsWithReactor.VersionSuffix = "ci." + buildId;
     }
 
     foreach (var gamePlatform in new[] { "Steam", "Itch" })
     {
-        settings.MSBuildSettings.Properties["GamePlatform"] = settingsWithReactor.MSBuildSettings.Properties["GamePlatform"] = new[] { gamePlatform };
+        settings.MSBuildSettings.Properties["GamePlatform"] = new[] { gamePlatform };
+        settingsWithReactor.MSBuildSettings.Properties["GamePlatform"] = new[] { gamePlatform };
         DotNetCoreBuild(".", settings);
+        DotNetCoreBuild(".", settingsWithReactor);
     }
 });
 

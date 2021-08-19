@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <DebugType>embedded</DebugType>
+
+        <VersionPrefix>1.0.0</VersionPrefix>
+        <VersionSuffix>release</VersionSuffix>
+        <Authors>Amsyar Rasyiq</Authors>
+        <Configurations>REACTOR;NOREACTOR</Configurations>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <GameVersion Condition="'$(GamePlatform)' == 'Steam'">2021.6.15s</GameVersion>
+        <GameVersion Condition="'$(GamePlatform)' == 'Itch'">2021.6.15i</GameVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Reactor" Version="1.0.0-rc.1" Condition="'$(Configuration)'=='REACTOR'" />
+        <PackageReference Include="Reactor.MSBuild" Version="0.1.5" PrivateAssets="all" />
+    </ItemGroup>
+
+    <Target Name="Copy" AfterTargets="Build" Condition="'$(AmongUs)' != ''">
+        <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(AmongUs)/BepInEx/plugins/" Condition="'$(Configuration)' != 'Release'" />
+    </Target>
+</Project>
